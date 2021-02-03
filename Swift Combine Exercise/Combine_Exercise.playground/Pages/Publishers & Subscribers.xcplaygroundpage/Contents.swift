@@ -62,4 +62,30 @@ someInts.publisher
 
 //字串
 "XYZ".publisher
+
+
+//let x = Just(1) as Publisher //error cast:Just就是一個Publisher
+
+/*:
+ 
+ AnyPublisher 是 Publisher 的具體實現，其本身沒有任何重要的屬性，並且會傳遞來自其上游發布者的元素和完成值
+ */
+//可以使用Combine中的eraseToAnyPublisher()方法將其轉為AnyPublisher包裝發佈者
+
+func a() -> AnyPublisher<(a: Int, b: String), Never> {
+    return Just((a: 1, b: "two")).eraseToAnyPublisher()
+}
+
+func b() -> AnyPublisher<String, Never> {
+    return a().map(\.b).eraseToAnyPublisher()
+}
+a().sink(receiveValue: {
+    let x = $0 // (a: 1, b: "two)
+})
+
+b().sink(receiveValue: {
+    let x = $0 // "two"
+})
+
+
 //: [下一頁](@next)

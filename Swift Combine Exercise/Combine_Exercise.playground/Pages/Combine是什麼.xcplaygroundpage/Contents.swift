@@ -19,13 +19,19 @@ import UIKit
  - Publisher(發佈者):資料的提供者
  - Subscriber(訂閱者):接收資料的接收者
  - Operator:在送出與接收資料之間進行處理的用途
- - Subject:
+ - Subject:比較特殊的Publisher
+ ---
+ 
+ Combine就是 = Publishers + Operators + Subscribers
  */
 
 /*
  參考資料
  https://www.appcoda.com.tw/functional-reactive-programming/
+ 
  https://juejin.cn/post/6911489863204700167
+ 
+ https://www.infoq.cn/article/eaq01u5jevuvqfghlqbs
  */
 import Combine
 
