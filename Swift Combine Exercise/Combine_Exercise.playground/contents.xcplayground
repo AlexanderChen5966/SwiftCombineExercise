@@ -9,5 +9,6 @@
         <page name='Subjects'/>
         <page name='Operators'/>
         <page name='Scheduler'/>
+        <page name='實際使用範例'/>
     </pages>
 </playground>

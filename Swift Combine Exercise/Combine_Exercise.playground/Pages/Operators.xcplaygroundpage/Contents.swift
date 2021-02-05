@@ -7,11 +7,12 @@ import Combine
 ## Operators(運算符)
  - 事件流中往往最初的對象和最後產生的對象會不一致，這時就需要Operators的協助幫忙轉換
  - Combine中operators是將一個publisherA當作輸入的對象，轉換成另一個publisherB
- - 舉例說明就是：發URL Request時Publisher為dataPublisher，透過map(_:)的運算符將Publisher轉換成，能符合response的型別
+ - 舉例說明就是：發URL Request時publisher為dataPublisher，透過map(_:)的運算符將publisher轉換成，能符合response的型別
 */
 
 //Combine中提供很多Operators可以使用
-//不過這裡只會簡單的使用一些Operators
+//想了解更多Operators可以到官方文件查詢
+//這裡只會簡單的使用一些Operators
 
 enum MyError: Error {
     case custom
